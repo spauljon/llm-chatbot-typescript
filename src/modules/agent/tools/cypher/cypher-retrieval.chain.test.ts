@@ -1,14 +1,11 @@
 // TODO: Remove code
-import { ChatOpenAI } from "@langchain/openai";
-import { config } from "dotenv";
-import { BaseChatModel } from "langchain/chat_models/base";
-import { Runnable } from "@langchain/core/runnables";
-import { Neo4jGraph } from "@langchain/community/graphs/neo4j_graph";
-import initCypherRetrievalChain, {
-  recursivelyEvaluate,
-  getResults,
-} from "./cypher-retrieval.chain";
-import { close } from "../../../graph";
+import {ChatOpenAI} from "@langchain/openai";
+import {config} from "dotenv";
+import {BaseChatModel} from "@langchain/core/language_models/chat_models";
+import {Runnable} from "@langchain/core/runnables";
+import {Neo4jGraph} from "@langchain/community/graphs/neo4j_graph";
+import initCypherRetrievalChain, {getResults, recursivelyEvaluate,} from "./cypher-retrieval.chain";
+import {close} from "../../../graph";
 
 describe("Cypher QA Chain", () => {
   let graph: Neo4jGraph;
