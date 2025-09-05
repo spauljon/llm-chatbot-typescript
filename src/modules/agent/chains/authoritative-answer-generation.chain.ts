@@ -4,7 +4,7 @@ import {
   RunnablePassthrough,
   RunnableSequence,
 } from "@langchain/core/runnables";
-import { BaseLanguageModel } from "langchain/base_language";
+import { BaseLanguageModel } from "@langchain/core/language_models/base";
 
 // tag::interface[]
 export type GenerateAuthoritativeAnswerInput = {
