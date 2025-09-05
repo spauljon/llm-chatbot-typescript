@@ -1,6 +1,6 @@
 import { ChatOpenAI } from "@langchain/openai";
 import { config } from "dotenv";
-import { BaseChatModel } from "langchain/chat_models/base";
+import { BaseChatModel } from "@langchain/core/language_models/chat_models";
 import { RunnableSequence } from "@langchain/core/runnables";
 import { Neo4jGraph } from "@langchain/community/graphs/neo4j_graph";
 import initCypherEvaluationChain from "./cypher-evaluation.chain";
@@ -53,7 +53,7 @@ describe("Cypher Evaluation Chain", () => {
     let found = false;
 
     for (const error of errors) {
-      if (error.includes("label Muvee does not exist")) {
+      if (error.includes("Label 'Muvee' does not exist")) {
         found = true;
       }
     }
@@ -97,7 +97,7 @@ describe("Cypher Evaluation Chain", () => {
       question: "How many movies are in the database?",
       cypher,
       schema: graph.getSchema(),
-      errors: ["Label Muvee does not exist"],
+      errors: ["Label 'Muvee' does not exist"],
     };
 
     const { cypher: updatedCypher, errors } = await chain.invoke(input);
