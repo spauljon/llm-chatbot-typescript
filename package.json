@@ -7,18 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "cross-env DOTENV_CONFIG_PATH=./.env.local jest",
-    "test:watch": "cross-env DOTENV_CONFIG_PATH=./.env.local jest --watchAll --detectOpenHandles"
+    "test": "cross-env DOTENV_CONFIG_PATH=./.env.local jest --force-exit",
+    "test:watch": "cross-env DOTENV_CONFIG_PATH=./.env.local jest --watchAll"
   },
   "dependencies": {
     "@babel/preset-env": "^7.23.8",
-    "@langchain/community": "^0.0.30",
-    "@langchain/core": "^0.1.48",
-    "@langchain/openai": "^0.0.11",
+    "@langchain/community": "0.2.33",
+    "@langchain/core": "0.2.36",
+    "@langchain/openai": "0.1.3",
     "@neo4j-cypher/language-support": "^2.0.0-next.3",
     "dotenv": "^16.4.0",
     "iron-session": "^8.0.1",
-    "langchain": "0.2.19",
+    "langchain": "0.2.20",
     "marked": "^10.0.0",
     "neo4j-driver": "^5.14.0",
     "next": "15.4.7",
@@ -41,5 +41,8 @@
     "tailwindcss": "^3.3.5",
     "ts-jest": "^29.1.2",
     "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "ignore": "5.3.1"
   }
 }
