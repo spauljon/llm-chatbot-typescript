@@ -1,7 +1,7 @@
 "use client";
 
 import Form from "@/components/form";
-import Message from "@/components/message";
+import MessageComponent from "@/components/message";
 import Thinking from "@/components/thinking";
 import useChat from "@/hooks/chat";
 import React from "react";
@@ -38,7 +38,7 @@ export default function Home() {
             scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
         >
           {messages.map((m, i) => {
-            return <Message key={i} message={m} />;
+            return <MessageComponent key={i} message={m} />;
           })}
 
           {thinking && <Thinking />}

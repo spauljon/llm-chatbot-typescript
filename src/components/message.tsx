@@ -1,5 +1,5 @@
-import { parse } from "marked";
-import { Message } from "@/hooks/chat";
+import {parse} from "marked";
+import {Message} from "@/hooks/chat";
 
 function fixMarkdown(message: Message): string {
   return parse(message.content).replace(
@@ -8,7 +8,7 @@ function fixMarkdown(message: Message): string {
   );
 }
 
-export default function Message({ message }: { message: Message }) {
+export default function MessageComponent({ message }: { message: Message }) {
   const align = message.role == "ai" ? "justify-start" : "justify-end";
   const no_rounding =
     message.role == "ai" ? "rounded-bl-none" : "rounded-br-none";

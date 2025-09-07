@@ -6,12 +6,14 @@ import initVectorRetrievalChain from "./vector-retrieval.chain";
 import {DynamicStructuredTool} from "@langchain/community/tools/dynamic";
 import {AgentToolInputSchema} from "../agent.types";
 
+type ToolSchema = typeof AgentToolInputSchema;
+
 // tag::function[]
 export default async function initTools(
   llm: BaseChatModel,
   embeddings: Embeddings,
   graph: Neo4jGraph
-): Promise<DynamicStructuredTool[]> {
+): Promise<Array<DynamicStructuredTool<ToolSchema>>> {
   // Initiate chains
   const cypherChain = await initCypherRetrievalChain(llm, graph);
   const retrievalChain = await initVectorRetrievalChain(llm, embeddings);
