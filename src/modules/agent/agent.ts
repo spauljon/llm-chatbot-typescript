@@ -43,7 +43,7 @@ export default async function initAgent(
       // Get Message History
       history: async (_input, options) => {
         return await getHistory(
-          options?.config.configurable.sessionId
+          options?.configurable.sessionId
         );
       },
     })

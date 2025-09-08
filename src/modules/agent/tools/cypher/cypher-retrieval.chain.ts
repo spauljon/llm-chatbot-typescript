@@ -126,7 +126,7 @@ export default async function initCypherRetrievalChain(
   llm: BaseLanguageModel,
   graph: Neo4jGraph
 ) {
-  const answerGeneration = await initGenerateAuthoritativeAnswerChain(llm);
+  const answerGeneration = initGenerateAuthoritativeAnswerChain(llm);
 
   return (
     RunnablePassthrough

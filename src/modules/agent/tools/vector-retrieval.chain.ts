@@ -58,7 +58,7 @@ export default async function initVectorRetrievalChain(
     .assign({
       responseId: async (input: RetrievalChainThroughput, options) =>
         saveHistory(
-          options?.config.configurable.sessionId,
+          options?.configurable.sessionId,
           "vector",
           input.input,
           input.rephrasedQuestion,

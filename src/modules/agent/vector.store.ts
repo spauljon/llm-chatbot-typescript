@@ -16,7 +16,7 @@ export default async function initVectorStore(
     url: process.env.NEO4J_URI as string,
     username: process.env.NEO4J_USERNAME as string,
     password: process.env.NEO4J_PASSWORD as string,
-    indexName: "moviePlots",
+    indexName: "movieTaglines",
     textNodeProperty: "tagline",
     embeddingNodeProperty: "embedding",
     retrievalQuery: `
