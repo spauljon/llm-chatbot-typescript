@@ -33,7 +33,7 @@ export default async function initAgent(
   const executor = new AgentExecutor({
     agent,
     tools,
-    verbose: true, // Verbose output logs the agents _thinking_
+    verbose: false, // Verbose output logs the agents _thinking_
   });
 
   const rephraseQuestionChain = initRephraseChain(llm);

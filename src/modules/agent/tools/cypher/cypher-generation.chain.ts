@@ -3,6 +3,7 @@ import {PromptTemplate} from "@langchain/core/prompts";
 import {RunnablePassthrough, RunnableSequence,} from "@langchain/core/runnables";
 import {StringOutputParser} from "@langchain/core/output_parsers";
 import {Neo4jGraph} from "@langchain/community/graphs/neo4j_graph";
+import {spy} from "@/modules/agent/spy";
 
 // tag::function[]
 export default async function initCypherGenerationChain(
@@ -46,7 +47,6 @@ export default async function initCypherGenerationChain(
     {question}
   `);
 
-  // Create the runnable sequence
   return RunnableSequence.from<string, string>([
     {
       question: new RunnablePassthrough(),
